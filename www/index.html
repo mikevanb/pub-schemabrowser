@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Skype Schema Browser</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0-rc.1/themes/redmond/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.0-rc.1/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.7.0/lunr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.7/URI.min.js" integrity="sha256-SSmTv/g7uUjsYbIkPCbQJ5pWmW8MUeZsefNE2Q3aXGY=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.7/jquery.URI.min.js" integrity="sha256-ByLPdlUIG0JZG+iCC1zfql5I8zXrsds3wgfioP2PxrE=" crossorigin="anonymous"></script>
+    <script src="querystring.js"></script>
+    <script src="schemabrowser.js"></script>
+
+   <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+        }({
+            instrumentationKey:"d74c75d0-d1af-4e10-af8a-dfbd02ce0ca3"
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+        
+</head>
+<body>
+    <div id="head" logo-text="SkypeSchemas Documentation">
+        <input type="search" id="search" name="search" placeholder="<search>"/>
+        <select id="select-link"></select>
+        <button id="clear" type="button">Clear All</button>
+        <br>
+        <label><input type="checkbox" id="filter" /> Include schemas without a declared output stream location</label>
+        <br />
+        <label><input type="checkbox" id="filter-dev" /> Include schemas marked as InDevelopment</label>
+    </div>
+    <div id="schemas"></div>
+    <div id="spinner"><div class="progress"></div></div>
+</body>
+</html>

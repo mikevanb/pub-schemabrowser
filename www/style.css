@@ -1,0 +1,341 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    background: white;
+    border-radius: 3px;
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    padding: 5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+}
+
+tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
+    color: black;
+    font-size: 6px;
+    font-weight: normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+    tr:hover td {
+        background: #E0E0E0;
+        /*color: #FFFFFF;*/
+        border-top: 1px solid #22262e;
+        border-bottom: 1px solid #22262e;
+        overflow: visible;
+    }
+
+    tr:nth-child(odd) td {
+        background: #EBEBEB;
+    }
+
+    tr:nth-child(odd):hover td {
+        background: #E0E0E0;
+    }
+
+    tr:last-child td:first-child {
+        border-bottom-left-radius: 3px;
+    }
+
+    tr:last-child td:last-child {
+        border-bottom-right-radius: 3px;
+    }
+
+    tr.schema-name td {
+        background-color: white;
+    }
+
+    tr:hover.schema-name td {
+        background-color: white;
+        color: #111;
+    }
+
+    tr.highlighted td {
+        background: LightCoral;
+    }
+
+    tr.highlighted:hover td {
+        background: LightCoral;
+    }
+
+td, th {
+    background: #FFFFFF;
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 2.5em;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+    td:last-child {
+        border-right: 0px;
+    }
+
+th {
+    text-align: center;
+    background: #EBEBEB;
+}
+
+.cross-link {
+    cursor: pointer;
+    color: darkblue;
+    text-decoration: none;
+    list-style: none;
+}
+
+.checkbox-toggle {
+    cursor: pointer;
+    color: darkblue;
+    text-decoration: none;
+    list-style: none;
+    font-size: 0.8em;
+}
+
+div.details {
+    border: none; /*2px solid gray;*/
+    padding: 5px;
+}
+
+div.example {
+    border: 2px solid gray;
+    padding: 5px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+div#head {
+    position: fixed;
+    width: 100%;
+    background-color: #EEEEEE;
+    padding: 10px;
+    border-bottom: 2px solid gray;
+    z-index: 1;
+}
+
+    div#head::after {
+        color: #111111;
+        content: attr(logo-text);
+        display: block;
+        font-size: 20px;
+        line-height: 1;
+        position: absolute;
+        bottom: 10px;
+        right: 35px;
+        text-shadow: 1px 1px #FFFFFF;
+        z-index: -1;
+    }
+
+#head-spacer {
+    width: 100%;
+    height: 50px;
+}
+
+.schema {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+    .schema:hover {
+        color: DarkSlateGray;
+    }
+
+.namespace {
+    margin-left: 15px;
+}
+
+.namespace-tree {
+    margin-left: 15px;
+}
+
+.namespace-title {
+    cursor: pointer;
+}
+
+div.schema_desc {
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 1em;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#clear {
+    font-size: 10px;
+}
+
+
+td.type {
+    width: 120px;
+    white-space: nowrap;
+    text-align: right;
+}
+
+td.field-name {
+    font-weight: bold;
+    white-space: nowrap;
+    max-width: 550px;
+}
+
+td.field-description {
+    white-space: normal;
+    overflow: visible;
+}
+
+td.field-owner {
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+td.field-inherits {
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+span.obsoleted {
+    font-style: italic;
+}
+
+span.cube-metric {
+    font-style: italic;
+}
+
+/* Progress spinner */
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.progress {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    margin: 0 .5em;
+    font-size: 12px;
+    text-indent: 999em;
+    overflow: hidden;
+    animation: spin 1s infinite steps(8);
+}
+
+.small.progress {
+    font-size: 6px;
+}
+
+.large.progress {
+    font-size: 24px;
+}
+
+.progress:before,
+.progress:after,
+.progress > div:before,
+.progress > div:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2.25em; /* (container width - part width)/2  */
+    width: .5em;
+    height: 1.5em;
+    border-radius: .2em;
+    background: #eee;
+    box-shadow: 0 3.5em #eee; /* container height - part height */
+    transform-origin: 50% 2.5em; /* container height / 2 */
+}
+
+.progress:before {
+    background: #555;
+}
+
+.progress:after {
+    transform: rotate(-45deg);
+    background: #777;
+}
+
+.progress > div:before {
+    transform: rotate(-90deg);
+    background: #999;
+}
+
+.progress > div:after {
+    transform: rotate(-135deg);
+    background: #bbb;
+}
+
+div#spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 5em;
+    height: 5em;
+    background-color: none;
+    display: none;
+}
+
+div#tooltip {
+    position: absolute;
+    text-align: left;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+div.tooltip-close {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+div.tooltip-content {
+    pointer-events: all;
+    padding-top: 1em;
+}
+
+ul.tooltip {
+    list-style-position: inside;
+}
+
+ul.checkbox-list {
+    list-style-type: none;
+    margin-left: 0px;
+}
+
+    ul.checkbox-list > li {
+        margin-left: 0px;
+    }
+
+ul > li {
+    margin-left: 10px;
+}
+
+img#schema-warning {
+    position: absolute;
+    right: 0;
+}

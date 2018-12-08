@@ -1,0 +1,12 @@
+{
+  "name": "local_schemabrowser",
+  "description": "Simple local web server",
+  "engines":{"node": "6.7.x"},
+  "version": "0.0.1",
+  "private": true,
+  "repository": "https://skype.visualstudio.com/DefaultCollection/SCC/_git/media_intelligence_queries",
+  "dependencies": {
+    "connect": "*",
+    "serve-static": "*"
+  }
+}
